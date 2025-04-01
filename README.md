@@ -19,6 +19,8 @@ Aarhus School of Business and Social Sciences
 
 ## Libraries used
 The code script for the thesis uses Python 3.11.11 and the following libraries and their versions:
+- keras 3.8.0 
+- tensorflow 2.18.0 
 -	pandas 2.2.2
 -	numpy 1.26.4
 -	os
