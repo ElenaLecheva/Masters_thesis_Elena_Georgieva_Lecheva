@@ -92,10 +92,9 @@ The `fill_mode` determines how to fill in pixels that get introduced due to data
 ![image](https://github.com/user-attachments/assets/4629b74c-b28d-4cc0-a9dc-ffb4722ceb4e)
 ![image](https://github.com/user-attachments/assets/4e16693d-6cbe-46df-a3ad-66aac2c091c3)
 
-Figure: fill mode from left to right: constant, wrap, reflect, nearest
-<p></p>
-<br>
-The nearest mode seems to introduce the least distortion in the images, for which reason it is chosen as a fill mode.
+Figure: fill mode from left to right: constant, wrap, reflect, nearest <p></p> <br>
+
+The `nearest` mode seems to introduce the least distortion in the images, for which reason it is chosen as a fill mode.
 <p></p>
 <br>
 
@@ -131,9 +130,8 @@ Similar to `steps_per_epoch`, `validation_steps` defines how many validation ste
 If `steps_per_epoch` and `validation_steps` are omitted, TensorFlow assumes that the generator will eventually raise a `StopIteration` exception, which happens when the generator naturally ends.<br>
 However, for infinite generators, like the custom-defined ones here, this can lead to an infinite training loop because the generator will never stop unless we explicitly define the steps, i.e. it will keep calling `next()` on the generator indefinitely. For this reason, when passing an infinitely repeating dataset, these arguments have to be specified, otherwise the training or validation will run indefinitely.<br>
 If the total number of samples in the datasets is not a perfect multiple of the batch size, Keras will still process the dataset in full, but the last batch will contain fewer samples than the specified batch size. For example, if there are 105 samples in the training dataset and a batch size of 32, Keras will process 3 full batches of 32 samples each (96 samples in total), and the last batch will have the remaining 9 samples. The same applies to the `validation_steps`.<br>
-However, since the expected shape of the input has already been specified in `output_signature`, which includes the batch size, the `fit` method cannot accept batches of other size. For this reason, the batch size must be the same for all batches, i.e. it should be an exact divisor of the training, validation and test set, i.e. of 2000, 150 and 600, so that there is no remainder when the dataset sizes are divided by the batch size. The exact divisors of 2000, 150 and 600 are 1, 2, 5, 10, 25, 50. Selecting a good batch size is a matter of finding the right training configuration. However, we want a batch size big enough so that the model can be exposed to enough samples to learn the data patterns. Besides, bigger batches lead to gradients that are more informative and less noisy, i.e. that have lower variance (Chollet 2021). Based on this, a batch size of 50 was selected. Furthermore, experimentation showed that a batch size of 50 is the optimal one and smaller batch sizes do not improve performance by much.
-<p></p>
-<br>
+However, since the expected shape of the input has already been specified in `output_signature`, which includes the batch size, the `fit` method cannot accept batches of other size. For this reason, the batch size must be the same for all batches, i.e. it should be an exact divisor of the training, validation and test set, i.e. of 2000, 150 and 600, so that there is no remainder when the dataset sizes are divided by the batch size. The exact divisors of 2000, 150 and 600 are 1, 2, 5, 10, 25, 50. Selecting a good batch size is a matter of finding the right training configuration. However, we want a batch size big enough so that the model can be exposed to enough samples to learn the data patterns. Besides, bigger batches lead to gradients that are more informative and less noisy, i.e. that have lower variance (Chollet 2021). Based on this, a batch size of 50 was selected. Furthermore, experimentation showed that a batch size of 50 is the optimal one and smaller batch sizes do not improve performance by much.<p></p><br>
+
 The models were also trained with class weights in order to potentially alleviate the effect of class imbalance. To train the model with class weights, the `fit` method together with the same arguments is used, but in this case class weights are added as well, which are calculated beforehand.
 <p></p>
 <br>
