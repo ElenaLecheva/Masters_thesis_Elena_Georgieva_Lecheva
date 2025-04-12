@@ -31,7 +31,7 @@ The code script for the thesis uses Python 3.11.11 and the following libraries a
 <br>
 
 ## Code explanation
-The overall structure of the code is: import libraries, load and pre-process data, create the model architecture and specify hyperparameters, train the model, plot results and evaluate the model on the validation set, retrain the model on the trainig and validation data, test the model on the test set.
+The overall structure of the code is: import libraries, load and pre-process data, create the model architecture and specify hyperparameters, train the model, plot results and evaluate the model on the validation set, retrain the model on the training and validation data, test the model on the test set.
 
 The following text briefly outlines the main functions and hyperparameters used to pre-process the data, construct, run and evaluate the models as well as the motivation behind the choices.
 <p></p>
