@@ -87,10 +87,10 @@ To pre-process the image data, an ImageDataGenerator for both the training and v
 Data augmentation is applied only to the training data because its primary purpose is to artificially increase the size and diversity of the training dataset, which helps the model generalize better to unseen data. The validation set is used to evaluate the model’s performance during training. It should reflect the real-world data distribution so that we can accurately measure how well the model will perform on unseen data. Thus, augmentation is active only during training but not during inference.<br>
 The fill_mode determines how to fill in pixels that get introduced due to data augmentation transformations (like rotation, zoom or shift). The options include “constant” (pad with a constant value), “wrap” (copy the top part and put it on the bottom and vice versa, and copy the right side and put it on the left and vice versa), “reflect” (fill with a reflection of the image's border), 'nearest' (replicate the border). The different fill modes can be seen in the figure below.
 
-![image](https://github.com/user-attachments/assets/737b4047-ccb3-4863-b3a5-ad9bdca4978f)
-![image](https://github.com/user-attachments/assets/db868fd6-6eb6-4230-a02b-bbe46d7d628d)
-![image](https://github.com/user-attachments/assets/316c1d47-e552-4a7e-bfbe-ddf8f06a8e44)
-![image](https://github.com/user-attachments/assets/ab83cce0-b0f2-4f75-b3ab-86948606a64f)
+![image](https://github.com/user-attachments/assets/0545b6b0-7cf0-411c-9872-c0c8210e7a59)
+![image](https://github.com/user-attachments/assets/57085d9a-5640-47a6-822a-0f07af1466ad)
+![image](https://github.com/user-attachments/assets/4629b74c-b28d-4cc0-a9dc-ffb4722ceb4e)
+![image](https://github.com/user-attachments/assets/4e16693d-6cbe-46df-a3ad-66aac2c091c3)
 
 Figure: fill mode from left to right: constant, wrap, reflect, nearest
 <p></p>
