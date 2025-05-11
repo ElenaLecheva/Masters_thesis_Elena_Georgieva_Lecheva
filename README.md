@@ -101,7 +101,7 @@ The `nearest` mode seems to introduce the least distortion in the images, for wh
 
 After this, the actual training and validation generators are created using the `flow_from_dataframe` method from `ImageDataGenerator`, specifying the dataframes with the directory paths where the images can be found, the image data as the input (`image_id`), the labels and metadata as the output (`columns[1:]`), the target size of the images and the batch size. Since all images, both within and between the 3 datasets, are of varying size (width and height), they were resized to a common size of 224x224.<br>
 The `own_train_generator_func` and `own_validation_generator_func` are custom-defined Python generator functions that yield a tuple of inputs (images and metadata) and targets (the labels).<br>
-Then the training and validation datasets are created, which are flat map datasets, to be used for training by using the `from_generator method`, the custom-defined generator functions and the `output_signature` argument, which specifies the shapes and data types of the inputs and output defined by `tf.TensorSpec`. The `output_signature` argument is needed in order to ensure that the output of the custom generator functions matches the expected structure and data types.
+Then the training and validation datasets are created, which are flat map datasets, to be used for training by using the `from_generator` method, the custom-defined generator functions and the `output_signature` argument, which specifies the shapes and data types of the inputs and output defined by `tf.TensorSpec`. The `output_signature` argument is needed in order to ensure that the output of the custom generator functions matches the expected structure and data types.
 <p></p>
 <br>
 
