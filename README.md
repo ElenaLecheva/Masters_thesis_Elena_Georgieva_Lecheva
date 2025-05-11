@@ -125,7 +125,7 @@ When fine-tuning a pre-trained model, we want to make smaller updates to the wei
 ### Training the model
 A `callbacks` list with a `ModelCheckpoint` callback is created to save the model with the lowest validation loss so that it can be loaded later to be retrained and used for inference on the test set. The `ModelCheckpoint` callback saves both the model's configuration (i.e. its architecture with the layers the model contains and the connections between them) and its state (i.e. the weights and compilation information).<br>
 The model is trained by passing the `train_dataset` and `validation_dataset`, which yield the training and validation inputs and targets.<br>
-A relatively high number of epochs is needed in order to make sure we will find the epoch where the model fits the data. The models are trained for 25 to 40 epochs (see section 3.6 Experiments).<br>
+A relatively high number of epochs is needed in order to make sure we will find the epoch where the model fits the data. The models are trained for 30 or 40 epochs (see section 3.6 Experiments).<br>
 The `steps_per_epoch` argument defines how many training steps (i.e. batches) the model should go through in one epoch. The default value is the number of samples in the training dataset divided by the batch size.<br>
 Similar to `steps_per_epoch`, `validation_steps` defines how many validation steps (batches) should be run in each epoch during the validation phase. The default value is the number of samples in the validation dataset divided by the batch size.<br>
 If `steps_per_epoch` and `validation_steps` are omitted, TensorFlow assumes that the generator will eventually raise a `StopIteration` exception, which happens when the generator naturally ends.<br>
